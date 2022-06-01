@@ -18,3 +18,6 @@ promptinit
 
 # This will set the default prompt to the redhat theme
 prompt redhat
+
+# source fish-like syntax-highlighting. Requires zsh-fast-syntax-highlighting from the AUR
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
