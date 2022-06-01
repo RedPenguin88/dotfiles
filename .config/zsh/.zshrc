@@ -16,5 +16,5 @@ zstyle ':completion:*' menu select  # To activate the menu, press tab twice
 compinit
 promptinit
 
-# This will set the default prompt to the walters theme
-prompt walters
+# This will set the default prompt to the redhat theme
+prompt redhat
