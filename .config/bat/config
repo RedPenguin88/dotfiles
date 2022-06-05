@@ -1,5 +1,5 @@
 # Set the theme to "Tokyo Night"
---theme="tokyo-night"
+--theme="kanagawa"
 
 # Show line numbers, Git modifications, file header and grid
 --style="grid,numbers,changes,header"
