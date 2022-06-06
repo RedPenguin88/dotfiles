@@ -13,6 +13,6 @@ my convenience. Much of this information has been gleaned from the Arch Wiki.
 
 - [ ] Customize zsh aliases
 - [ ] Add autocompletion/suggestions to zsh
-- [ ] #1
+- [ ] Modify [zsh vi-mode cursor behavior](https://github.com/RedPenguin88/dotfiles/issues/1)
 - [ ] Add ability for lf to preview images :file_folder:
 - [ ] Configure river init
