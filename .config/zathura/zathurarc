@@ -1,1 +1,10 @@
+set default-bg "#16161D"
+
+set inputbar-bg "#16161D"
+set inputbar-fg "#C8C093"
+
+set recolor
+set recolor-lightcolor "#1F1F28"
+set recolor-darkcolor "#DCD7BA"
+
 set selection-clipboard clipboard
