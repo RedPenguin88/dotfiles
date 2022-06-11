@@ -1,6 +1,11 @@
 #!/bin/zsh
 
-# History settings
+##
+# Basic History settings
+#
+# Many options here are chosen based on information from
+# https://zsh.sourceforge.io/Guide/zshguide02.html#l18
+#
 
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=10000
