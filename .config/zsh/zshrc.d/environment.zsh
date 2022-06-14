@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+##
+# Set Basic Environment Variables
+#
+
 # Add "~/.local/bin" to path
 export PATH="~/.local/bin:$PATH"
 
@@ -16,5 +20,3 @@ export GOPATH="$XDG_DATA_HOME"/go
 
 # Enable syntax highlighting for manpages using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-emulate sh -c 'source /etc/profile'
