@@ -2,7 +2,10 @@
 
 ##
 # Set Basic aliases for convenience
-#
+# 
+# Included are settings for visual clarity and 'safe' options to prevent
+# unfortunate accidents
+# 
 
 # Use nvim instead of vim
 alias vim='nvim'
@@ -15,3 +18,10 @@ alias \
 	grep='grep --color=auto' \
 	diff='diff --color=auto' \
 	cat='bat --paging=never'
+
+# Set basic verbosity and misc. settings
+alias \
+	cp='cp -iv' \
+	mv='mv -iv' \
+	mkdir='mkdir -pv' \
+	rm='rm -Iv'
