@@ -12,8 +12,6 @@ my convenience. Much of this information has been gleaned from the Arch Wiki.
 
 ## TODO
 
-- [x] Add custom colors to zathura
-- [ ] Customize zsh aliases
 - [ ] Add autocompletion/suggestions to zsh
 - [ ] Modify [zsh vi-mode cursor behavior](https://github.com/RedPenguin88/dotfiles/issues/1)
 - [ ] Integrate git status into prompt
