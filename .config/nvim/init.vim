@@ -5,7 +5,6 @@ set smartindent
 set number relativenumber
 set noerrorbells
 set incsearch
-set termguicolors
 set nowrap
 set scrolloff=8
 set sidescrolloff=8
