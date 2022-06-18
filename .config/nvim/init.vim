@@ -3,7 +3,6 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set number relativenumber
-set noerrorbells
 set incsearch
 set nowrap
 set scrolloff=8
