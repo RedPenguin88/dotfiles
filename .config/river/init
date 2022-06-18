@@ -13,6 +13,9 @@
 # Super+Shift+Return to start an instance of kitty (https://sw.kovidgoyal.net/kitty)
 riverctl map normal Super+Shift Return spawn kitty
 
+# Super+D to start launcher (dmenu replacement)
+riverctl map normal Super D spawn fuzzel
+
 # Super+Q to close the focused view
 riverctl map normal Super Q close
 
