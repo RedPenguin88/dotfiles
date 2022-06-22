@@ -1,10 +1,16 @@
 set default-bg "#16161D"
 
 set inputbar-bg "#16161D"
-set inputbar-fg "#C8C093"
+set inputbar-fg "#DCD7BA"
 
 set statusbar-bg "#16161D"
-set statusbar-fg "#C8C093"
+set statusbar-fg "#DCD7BA"
+
+set completion-bg "#16161D"
+set completion-fg "#DCD7BA"
+
+set completion-group-bg "#0C0C10"
+set completion-group-fg "#DCD7BA"
 
 set recolor
 set recolor-lightcolor "#1F1F28"
