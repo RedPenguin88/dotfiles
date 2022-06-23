@@ -10,14 +10,14 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-# Super+Shift+Return to start an instance of kitty (https://sw.kovidgoyal.net/kitty)
-riverctl map normal Super+Shift Return spawn kitty
-
-# Super+D to start launcher (dmenu replacement)
-riverctl map normal Super D spawn fuzzel
+# Super+Return to start an instance of kitty (https://sw.kovidgoyal.net/kitty)
+riverctl map normal Super Return spawn kitty
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
+
+# Super+D to open launcher (dmenu replacement)
+riverctl map normal Super D spawn fuzzel
 
 # Super+Shift+E to exit river
 riverctl map normal Super+Shift E exit
@@ -39,7 +39,7 @@ riverctl map normal Super Comma focus-output previous
 riverctl map normal Super+Shift Period send-to-output next
 riverctl map normal Super+Shift Comma send-to-output previous
 
-# Super+Space to bump the focused view to the top of the layout stack
+# Super+Return to bump the focused view to the top of the layout stack
 riverctl map normal Super Space zoom
 
 # Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
@@ -97,7 +97,7 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
-# Super+Shift+Space to toggle float
+# Super+Space to toggle float
 riverctl map normal Super+Shift Space toggle-float
 
 # Super+F to toggle fullscreen
