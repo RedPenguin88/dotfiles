@@ -143,7 +143,8 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x002b36
+# riverctl background-color 0x002b36
+swaybg -m fill -i ~/Pictures/wallpapers/bg.png &
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
 
