@@ -148,6 +148,9 @@ swaybg -m fill -i ~/Pictures/wallpapers/bg.png &
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
 
+# Start waybar
+waybar &
+
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
