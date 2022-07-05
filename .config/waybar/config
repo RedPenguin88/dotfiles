@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "modules-left": ["river/tags", "river/mode"],
+    "modules-left": ["river/tags"],
     "modules-center": ["river/window"],
     "modules-right": ["battery", "clock"],
     "river/tags": {
