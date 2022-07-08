@@ -1,5 +1,6 @@
 #!/bin/sh
 
 export XKB_DEFAULT_OPTIONS=caps:swapescape
+export MOZ_ENABLE_WAYLAND=1
 
 river
