@@ -151,6 +151,9 @@ riverctl border-color-unfocused 0x586e75
 # Start waybar
 waybar &
 
+# Hide GTK window buttons
+gsettings set org.gnome.desktop.wm.preferences button-layout ""
+
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
