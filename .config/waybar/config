@@ -2,12 +2,22 @@
     "layer": "top",
     "modules-left": ["river/tags"],
     "modules-center": ["river/window"],
-    "modules-right": ["battery", "clock#date", "clock#time"],
+    "modules-right": ["pulseaudio", "battery", "clock#date", "clock#time"],
     "river/tags": {
          "num-tags": 5
     },
     "river/window": {
         "max-length": 50
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "婢 0%",
+        "format-icons": {
+             "headphones": "",
+             "default": ["", ""]
+        },
+        "scroll-step": 1,
     },
     "battery": {
         "format": "{capacity}% {icon}",
