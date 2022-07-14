@@ -15,6 +15,7 @@ ln -sfT dash /usr/bin/sh
 - Updates of Bash will overwrite `/bin/sh` with the default symlink.
 - This hook relinks `/bin/sh` every affected update
 - *Important:* Ensure all your `/bin/sh` scripts are POSIX compliant, e.g. there exist no "bashisms"
+- Depends on `dash`
 
 ## bat.hook
 
