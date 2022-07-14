@@ -12,7 +12,7 @@
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "婢 0%",
+        "format-muted": "0% 婢",
         "format-icons": {
              "headphones": "",
              "default": ["", ""]
