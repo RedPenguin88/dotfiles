@@ -20,6 +20,7 @@ fi
 # List of plugins
 local -a plugins=(
     zdharma-continuum/fast-syntax-highlighting  # Command-line syntax highlighting
+    zsh-users/zsh-autosuggestions               # Inline suggestions
 )
 
 znap clone $plugins
