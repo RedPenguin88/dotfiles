@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = bat
+
+[Action]
+Description = Updating bat binary cache...
+When = PostTransaction
+Exec = /usr/bin/sudo -u YOUR_USERNAME /usr/bin/bat cache --build
