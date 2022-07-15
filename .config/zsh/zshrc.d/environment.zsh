@@ -9,6 +9,7 @@ export PATH="~/.local/bin:$PATH"
 
 # Set default editor
 export EDITOR="nvim"
+export VISUAL="nvim"
 
 # I like to clean up my home directory and much as possible. See
 # https://wiki.archlinux.org/title/XDG_Base_Directory for more details
