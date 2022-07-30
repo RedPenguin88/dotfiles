@@ -13,7 +13,7 @@ window#waybar {
     color: white;
 }
 
-#workspaces button {
+#tags button {
     padding-left: 3;
     padding-right: 3;
     color: #888888;
@@ -22,10 +22,15 @@ window#waybar {
     padding-bottom: 4px;
 }
 
-#workspaces button.focused {
+#tags button.focused {
     background: #285577;
     color: white;
     border-color: #4C7899;
+}
+
+#tags button.urgent {
+    border-color: #c9545d;
+    color: #c9545d;
 }
 
 #clock, #battery {
