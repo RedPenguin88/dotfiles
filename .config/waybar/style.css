@@ -4,56 +4,83 @@
     font-family: Liberation Sans, sans-serif;
     font-size: 16px;
     min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
+    background: #323232;
     color: white;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: white;
-    border-bottom: 3px solid transparent;
+    padding-left: 3;
+    padding-right: 3;
+    color: #888888;
+    border-top: 2px solid transparent;
+    padding-top: 2px;
+    padding-bottom: 4px;
 }
 
 #workspaces button.focused {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    background: #285577;
+    color: white;
+    border-color: #4C7899;
 }
 
 #clock, #battery {
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 #clock {
-    background-color: #64727D;
+
 }
 
 #battery {
-    background-color: #ffffff;
-    color: black;
-}
-
-#battery.charging {
-    color: white;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    background: #f53c3c;
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+@keyframes blink-warning {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: orange;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: white;
+    }
+
+    to {
+        color: white;
+        background-color: red;
+    }
 }
