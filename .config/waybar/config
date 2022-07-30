@@ -20,7 +20,7 @@
         "scroll-step": 1,
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""]
     },
     "clock#date": {
