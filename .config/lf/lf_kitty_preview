@@ -1,0 +1,23 @@
+#!/bin/sh
+
+FILE=$1
+W=$2
+H=$3
+X=$4
+Y=$5
+
+# Create cache folder if it doesn't exist
+THUMBNAILS="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumbnails"
+[ -d "$THUMBNAILS" ] || mkdir -p "$THUMBNAILS"
+
+case "$(file -Lb --mime-type "$FILE")" in
+    image/*) kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$FILE" ;;
+    video/*)
+        CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
+        [ -f "$CACHE" ] || ffmpegthumbnailer -i "$FILE" -o "$CACHE" -s 0
+        kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$CACHE"
+        ;;
+    text/*) bat -f "$FILE" ;;
+esac
+
+exit 1

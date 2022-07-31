@@ -29,6 +29,10 @@ set icons
 # use enter for shell commands
 map <enter> shell
 
+# set previewer and cleaner
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
+
 # execute current file (must be executable)
 map x $$f
 map X !$f
