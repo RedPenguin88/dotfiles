@@ -23,6 +23,7 @@ case "$(file -Lb --mime-type "$FILE")" in
         [ -f "$CACHE.jpg" ] || pdftoppm -jpeg -f 1 -singlefile "$FILE" "$CACHE"
         kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$CACHE.jpg"
         ;;
+    application/zip) atool --list -- "$FILE" ;;
     text/*) bat -f "$FILE" ;;
 esac
 
