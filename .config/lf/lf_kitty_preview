@@ -12,10 +12,16 @@ THUMBNAILS="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumbnails"
 
 case "$(file -Lb --mime-type "$FILE")" in
     image/*) kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$FILE" ;;
+    audio/*) mediainfo "$FILE" ;;
     video/*)
         CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
         [ -f "$CACHE" ] || ffmpegthumbnailer -i "$FILE" -o "$CACHE" -s 0
         kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$CACHE"
+        ;;
+    */pdf)
+        CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
+        [ -f "$CACHE.jpg" ] || pdftoppm -jpeg -f 1 -singlefile "$FILE" "$CACHE"
+        kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$CACHE.jpg"
         ;;
     text/*) bat -f "$FILE" ;;
 esac
