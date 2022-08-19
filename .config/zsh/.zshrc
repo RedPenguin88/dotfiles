@@ -9,10 +9,12 @@
 
 # Create an anonymous function so we can use local variables
 () {
+    # Where plugins are stored
+    local plugin_dir=$HOME/.local/src/
     # Source every file in zshrc.d
     # Keeps config clean and organized
     local file
     for file in $ZDOTDIR/zshrc.d/*.zsh; do
         . $file
     done
-}
+} "$@"

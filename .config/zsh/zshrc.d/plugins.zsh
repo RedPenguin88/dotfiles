@@ -5,12 +5,12 @@
 #
 
 # Feel free to change the git directory to whatever you prefer.
-local znap=~/.local/src/zsh-snap/znap.zsh
+local znap=$plugin_dir/zsh-snap/znap.zsh
 
 # Clone Znap plugin manager if it doesn't exist
 if ! [[ -r $znap ]]; then
-  mkdir -p ~/.local/src
-  git -C ~/.local/src clone --depth 1 -- \
+  mkdir -p $plugin_dir
+  git -C $plugin_dir clone --depth 1 -- \
       https://github.com/marlonrichert/zsh-snap.git
 fi
 
