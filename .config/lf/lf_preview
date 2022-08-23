@@ -1,0 +1,49 @@
+#!/bin/sh
+
+##
+# lf preview script
+#
+# Provides basic syntax highlighting, file information, and image previews
+# Dependencies: bat, mediainfo, poppler, atool
+# Image Previews: ueberzug (X11), kitty (wayland)
+#
+
+
+FILE=$1
+W=$2
+H=$3
+X=$4
+Y=$5
+
+draw() {
+    if [ -n "$FIFO_UEBERZUG" ] && [ -z "$WAYLAND_DISPLAY" ] && command -V ueberzug >/dev/null 2>&1; then
+        printf '{"action": "add", "identifier": "preview", "x": %d, "y": %d, "width": %d, "height": %d, "scaler": "contain", "path": "%s"}\n' \
+        "$X" "$Y" "$((W-1))" "$((H-1))" "$1" >"$FIFO_UEBERZUG"
+    elif [ -n "$WAYLAND_DISPLAY" ] && command -V kitty >/dev/null 2>&1; then
+        kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$1"
+    else
+        mediainfo "$1"
+    fi
+}
+
+THUMBNAILS="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumbnails"
+
+case "$(file -Lb --mime-type "$FILE")" in
+    image/*) draw "$FILE" ;;
+    audio/*) mediainfo "$FILE" ;;
+    video/*)
+        CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
+        [ ! -f "$CACHE" ] && ffmpegthumbnailer -i "$FILE" -o "$CACHE" -s 0
+        draw "$CACHE"
+        ;;
+    */pdf)
+        CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
+        [ ! -f "$CACHE.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$FILE" "$CACHE"
+        draw "$CACHE.jpg"
+        ;;
+    application/zip) atool --list -- "$FILE" ;;
+    application/gzip) bsdtar --list --file "$FILE" ;;
+    text/*) bat -f "$FILE" ;;
+esac
+
+exit 1

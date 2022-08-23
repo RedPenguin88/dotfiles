@@ -30,8 +30,8 @@ set icons
 map <enter> shell
 
 # set previewer and cleaner
-set previewer ~/.config/lf/lf_kitty_preview
-set cleaner ~/.config/lf/lf_kitty_clean
+set previewer ~/.config/lf/lf_preview
+set cleaner ~/.config/lf/lf_clean
 
 # execute current file (must be executable)
 map x $$f

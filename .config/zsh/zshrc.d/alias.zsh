@@ -15,13 +15,14 @@ alias ls='exa --group-directories-first --color=auto --icons'
 
 # Use color for commands when possible
 alias \
-	grep='grep --color=auto' \
-	diff='diff --color=auto' \
-	cat='bat --paging=never'
+    grep='grep --color=auto' \
+    diff='diff --color=auto' \
+    cat='bat --paging=never'
 
 # Set basic verbosity and misc. settings
 alias \
-	cp='cp -iv' \
-	mv='mv -iv' \
-	mkdir='mkdir -pv' \
-	rm='rm -Iv'
+    cp='cp -iv' \
+    mv='mv -iv' \
+    mkdir='mkdir -pv' \
+    rm='rm -Iv' \
+    lf='lfub'

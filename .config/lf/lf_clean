@@ -1,0 +1,14 @@
+#!/bin/sh
+
+##
+# Cleaner Script used with lf to clear images from the screen
+# 
+# X11 Dependencies: ueberzug
+# Wayland Dependencies: kitty
+#
+
+if [ -n "$FIFO_UEBERZUG" ] && [ -z "$WAYLAND_DISPLAY" ]; then
+    printf '{"action": "remove", "identifier": "preview"}\n' >"$FIFO_UEBERZUG"
+elif command -V kitty >/dev/null 2>&1; then
+    kitty +icat --clear --silent --transfer-mode file
+fi
