@@ -13,6 +13,9 @@ alias vim='nvim'
 # Use exa (ls replacement) for colors, icons, and other niceties
 alias ls='exa --group-directories-first --color=auto --icons'
 
+# Use $XINITRC
+alias startx='startx $XINITRC'
+
 # Use color for commands when possible
 alias \
     grep='grep --color=auto' \
