@@ -6,4 +6,6 @@ xwallpaper --zoom ~/Pictures/bg.jpg
 
 picom --experimental-backends &
 
+dwmblocks &
+
 exec dwm
