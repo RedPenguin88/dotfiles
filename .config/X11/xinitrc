@@ -1,3 +1,5 @@
+#!/bin/sh
+
 xset r rate 300 50
 
 setxkbmap -option caps:swapescape
@@ -6,6 +8,8 @@ xwallpaper --zoom ~/Pictures/bg.jpg
 
 picom --experimental-backends &
 
-dwmblocks &
+for program in dwmblocks unclutter dunst; do
+    pidof -s "$program" || "$program" &
+done
 
 exec dwm
