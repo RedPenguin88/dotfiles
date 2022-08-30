@@ -1,9 +1,21 @@
 #!/bin/sh
 
 case $BUTTON in
-    1) notify-send "$(cat /sys/class/power_supply/BAT0/status)"
+    1) notify-send "$(cat /sys/class/power_supply/BAT0/status)" ;;
+    4) light -A 5 ;;
+    5) light -U 5 ;;
 esac
 
 CAPACITY="$(cat /sys/class/power_supply/BAT0/capacity)"
 
-printf "%s%s" "$CAPACITY" "%"
+if [ "$CAPACITY" -lt 25 ]; then
+    ICON=" "
+elif [ "$CAPACITY" -lt 50 ]; then
+    ICON=" "
+elif [ "$CAPACITY" -lt 75 ]; then
+    ICON=" "
+else
+    ICON=" "
+fi
+
+printf "%s%s%s" "$ICON" "$CAPACITY" "%"
