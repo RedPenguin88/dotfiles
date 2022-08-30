@@ -1,0 +1,28 @@
+#!/bin/sh
+
+case $BUTTON in
+    1) setsid -f st -e pulsemixer ;;
+    2) pamixer -t ;;
+    4) pamixer --allow-boost -i 1 ;;
+    5) pamixer --allow-boost -d 1 ;;
+esac
+
+VOLUME="$(pamixer --get-volume)"
+
+if [ "$(pamixer --get-mute)" = true ]; then
+    ICON="ﱝ "
+else
+    if [ "$VOLUME" -eq 0 ]; then
+        ICON="婢 "
+    elif [ "$VOLUME" -lt 33 ]; then
+        ICON="奄 "
+    elif [ "$VOLUME" -lt 66 ]; then
+        ICON=" "
+    elif [ "$VOLUME" -lt 100 ]; then
+        ICON="墳 "
+    else # Greater than 100
+        ICON=" "
+    fi
+fi
+
+echo "$ICON$VOLUME"
