@@ -36,6 +36,11 @@ case "$(file -Lb --mime-type "$FILE")" in
         [ ! -f "$CACHE" ] && ffmpegthumbnailer -i "$FILE" -o "$CACHE" -s 0
         draw "$CACHE"
         ;;
+    application/epub+zip)
+        CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
+        [ ! -f "$CACHE" ] && epub-thumbnailer "$FILE" "$CACHE" "1920"   # Adjust value if needed
+        draw "$CACHE"
+        ;;
     */pdf)
         CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
         [ ! -f "$CACHE.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$FILE" "$CACHE"
