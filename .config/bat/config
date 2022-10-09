@@ -1,5 +1,5 @@
-# Set the theme to "Tokyo Night"
---theme="kanagawa"
+# Set the theme to "Catppuccin - Macchiato"
+--theme="catppuccin-macchiato"
 
 # Show line numbers, Git modifications, file header and grid
 --style="grid,numbers,changes,header"
