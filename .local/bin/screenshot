@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$(printf 'Fullscreen\nSelection\nWindow\nFullscreen (clipboard)\nSelection (clipboard)\nWindow (clipboard)' | rofi -dmenu -p 'Choose Area to Screenshot')" in
+    "Fullscreen") maim -q -d 0.3 ~/Pictures/"$(date +'%s')".png ;;
+    "Selection") maim -s ~/Pictures/"$(date +'%s')".png ;;
+    "Window") maim -q -d 0.3 -i "$(xdotool getactivewindow)" ~/Pictures/"$(date +'%s')".png ;;
+    "Fullscreen (clipboard)") maim -q -d 0.3 | xclip -selection clipboard -t image/png ;;
+    "Selection (clipboard)") maim -s | xclip -selection clipboard -t image/png ;;
+    "Window (clipboard)") maim -q -d 0.3 -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
+esac
