@@ -1,1 +1,4 @@
 https://www.archlinux.org/feeds/news/ "tech"
+https://git.suckless.org/dwm/atom.xml "suckless"
+https://git.suckless.org/st/atom.xml "suckless"
+https://git.suckless.org/dmenu/atom.xml "suckless"
