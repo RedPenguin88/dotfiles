@@ -29,6 +29,11 @@ draw() {
 THUMBNAILS="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumbnails"
 
 case "$(file -Lb --mime-type "$FILE")" in
+    image/svg+xml|image/svg)
+        CACHE="$THUMBNAILS/$(realpath "$FILE" | md5sum - | cut -d ' ' -f1)"
+        [ ! -f "$CACHE.png" ] && rsvg-convert --keep-aspect-ratio --width "1920" "$FILE" -o "$CACHE.png"
+        draw "$CACHE.png"
+        ;;
     image/*) draw "$FILE" ;;
     audio/*) mediainfo "$FILE" ;;
     video/*)
