@@ -4,7 +4,8 @@
 # lf preview script
 #
 # Provides basic syntax highlighting, file information, and image previews
-# Dependencies: bat, mediainfo, poppler, atool
+# Dependencies: bat, mediainfo, atool, bsdtar, rsvg-convert,
+#               ffmpegthumbnailer, epub-thumbnailer, pdftoppm
 # Image Previews: ueberzug (X11), kitty (wayland)
 #
 
