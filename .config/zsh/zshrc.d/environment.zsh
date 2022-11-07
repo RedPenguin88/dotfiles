@@ -21,6 +21,10 @@ export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 export LESSHISTFILE="-"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GOPATH="$XDG_DATA_HOME"/go
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
-# Enable syntax highlighting for manpages using bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# Various program settings
+export MANPAGER="sh -c 'col -bx | bat -l man -p'" # Enable syntax highlighting for manpages using bat
+export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
