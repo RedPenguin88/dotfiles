@@ -30,6 +30,9 @@ alias \
     rm="rm -Iv" \
     lf="lfub"
 
+# Allow pasting of code into the terminal without interpreting $ or %
+alias \$= %=
+
 # Shorten commonly used commands
 alias \
     g="git" \
