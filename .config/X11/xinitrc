@@ -6,7 +6,7 @@ setxkbmap -option caps:swapescape
 
 xwallpaper --zoom ~/Pictures/bg.jpg
 
-picom --experimental-backends &
+picom &
 
 for program in dwmblocks unclutter dunst; do
     pidof -s "$program" || "$program" &
