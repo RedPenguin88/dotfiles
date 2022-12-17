@@ -2,16 +2,18 @@
 
 case $BUTTON in
     1) setsid -f st -e pulsemixer ;;
-    2) pamixer -t ;;
-    4) pamixer --allow-boost -i 1 ;;
-    5) pamixer --allow-boost -d 1 ;;
+    2) wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
+    4) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ ;;
+    5) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- ;;
 esac
 
-VOLUME="$(pamixer --get-volume)"
+VOLUME="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
 
-if [ "$(pamixer --get-mute)" = true ]; then
+if [ "$VOLUME" != "${VOLUME%\[MUTED\]}" ]; then
     echo "ﱝ" && exit
 else
+    VOLUME="$(echo "$VOLUME" | cut -d ' ' -f2 | tr -d '.')"
+    VOLUME="${VOLUME#0}"
     if [ "$VOLUME" -eq 0 ]; then
         ICON="婢 "
     elif [ "$VOLUME" -lt 33 ]; then
