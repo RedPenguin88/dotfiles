@@ -19,7 +19,7 @@ if [ -n "$DISPLAY" ]; then
   exec 3>"$FIFO_UEBERZUG"
   trap cleanup EXIT
 
-  [ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumbnails" ] && mkdir -p "$HOME/.cache/lf/thumbnails"
+  mkdir -p "$HOME/.cache/lf/thumbnails"
 
   lf "$@" 3>&-
 else
