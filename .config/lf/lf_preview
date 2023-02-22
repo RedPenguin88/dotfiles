@@ -21,7 +21,7 @@ draw() {
         printf '{"action": "add", "identifier": "preview", "x": %d, "y": %d, "width": %d, "height": %d, "scaler": "contain", "path": "%s"}\n' \
         "$X" "$Y" "$((W-1))" "$((H-1))" "$1" >"$FIFO_UEBERZUG"
     elif [ -n "$WAYLAND_DISPLAY" ] && command -V kitty >/dev/null 2>&1; then
-        kitty +icat --silent --transfer-mode file --place "${W}x${H}@${X}x${Y}" "$1"
+      kitty +icat --silent --transfer-mode file --place "$((W-1))x$((H-1))@${X}x${Y}" "$1"
     else
         mediainfo "$1"
     fi
