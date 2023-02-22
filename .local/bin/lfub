@@ -6,7 +6,7 @@
 
 set -e
 
-if [ -n "$DISPLAY" ]; then
+if [ -n "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ]; then
   export FIFO_UEBERZUG="${TMPDIR:-/tmp}/lf-ueberzug-$$"
 
   cleanup() {
