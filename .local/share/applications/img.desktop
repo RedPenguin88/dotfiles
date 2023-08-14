@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Image Viewer
+Type=Application
+Exec=imv %F
