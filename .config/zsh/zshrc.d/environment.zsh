@@ -5,7 +5,7 @@
 #
 
 # Add "~/.local/bin" to path
-export PATH="~/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set default editor
 export EDITOR="nvim"
