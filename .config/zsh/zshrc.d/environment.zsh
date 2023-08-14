@@ -21,6 +21,7 @@ export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 export LESSHISTFILE="-"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GOPATH="$XDG_DATA_HOME"/go
+export GDK_SCALE=1.5 # For Steam
 export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
