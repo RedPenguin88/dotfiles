@@ -28,5 +28,6 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
 # Various program settings
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # Enable syntax highlighting for manpages using bat
+export MANROFFOPT="-c"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix misbehaving Java applications
