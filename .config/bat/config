@@ -1,5 +1,5 @@
-# Set the theme to "Catppuccin - Macchiato"
---theme="catppuccin-macchiato"
+# Set the theme to "Gruvbox-Material"
+--theme="gruvbox-material"
 
 # Show line numbers, Git modifications, file header and grid
 --style="grid,numbers,changes,header"
