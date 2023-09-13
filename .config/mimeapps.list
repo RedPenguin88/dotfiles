@@ -1,6 +1,8 @@
 [Default Applications]
 text/x-shellscript=text.desktop;
 text/plain=text.desktop;
+application/javascript=text.desktop;
+application/json=text.desktop;
 application/postscript=pdf.desktop;
 application/pdf=pdf.desktop;
 image/png=img.desktop;
