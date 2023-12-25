@@ -55,6 +55,7 @@ case "$(file -Lb --mime-type "$FILE")" in
     application/zip) atool --list -- "$FILE" ;;
     application/gzip) bsdtar --list --file "$FILE" ;;
     text/*) bat -f "$FILE" ;;
+    text/*|application/json|application/javascript) bat -f "$FILE" ;;
 esac
 
 exit 1
