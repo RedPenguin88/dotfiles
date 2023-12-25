@@ -7,11 +7,14 @@
 # unfortunate accidents
 # 
 
-# Use nvim instead of vim
-alias vim="nvim"
+# Use nvim instead of vim if possible
+[ -x "$(command -v nvim)"] && alias vim="nvim"
 
-# Use exa (ls replacement) for colors, icons, and other niceties
-alias ls="exa --group-directories-first --color=auto --icons"
+# Use eza (ls replacement) for colors, icons, and other niceties
+if command -V eza >/dev/null 2>&1; then
+    alias ls="eza --group-directories-first --color=auto --icons"
+else
+    alias ls="ls --group-directories-first --color=auto -h"
 
 # Use $XINITRC
 alias startx="startx $XINITRC"
@@ -20,7 +23,7 @@ alias startx="startx $XINITRC"
 alias \
     grep="grep --color=auto" \
     diff="diff --color=auto" \
-    cat="bat --paging=never"
+    ccat="bat --paging=never"
 
 # Set basic verbosity and misc. settings
 alias \
