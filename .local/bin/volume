@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case $BUTTON in
+case $BLOCK_BUTTON in
     1) setsid -f st -e pulsemixer ;;
     2) wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
     4) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ ;;
