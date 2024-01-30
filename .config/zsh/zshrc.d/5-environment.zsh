@@ -16,8 +16,8 @@ export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export XINITRC="$XDG_CONFIG_HOME"/x11/xinitrc
-export XSERVERRC="$XDG_CONFIG_HOME"/x11/xserverrc
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+export XSERVERRC="$XDG_CONFIG_HOME/x11/xserverrc"
 export LESSHISTFILE="-"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export GOPATH="$XDG_DATA_HOME"/go
@@ -30,4 +30,7 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export MANPAGER="less -R --use-color -Dd+r -Du+b -s -M +Gg" # Enable syntax highlighting for manpages
 export MANROFFOPT="-P -c"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.
-export _JAVA_AWT_WM_NONREPARENTING=1 # Fix misbehaving Java applications
+# Fix misbehaving Java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
+wmname LG3D
