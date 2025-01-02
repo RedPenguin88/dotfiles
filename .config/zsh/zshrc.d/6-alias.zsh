@@ -8,13 +8,14 @@
 # 
 
 # Use nvim instead of vim if possible
-[ -x "$(command -v nvim)"] && alias vim="nvim"
+[ -x "$(command -v nvim)" ] && alias vim="nvim"
 
 # Use eza (ls replacement) for colors, icons, and other niceties
 if command -V eza >/dev/null 2>&1; then
     alias ls="eza --group-directories-first --color=auto --icons"
 else
     alias ls="ls --group-directories-first --color=auto -h"
+fi
 
 # Use $XINITRC
 alias startx="startx $XINITRC"
